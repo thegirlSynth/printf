@@ -15,10 +15,11 @@ int _putchar(char c);
  * @f: the corresponding function
  */
 
-typedef struct printf{
+typedef struct printf
+{
 	char t;
 	int (*f)(va_list list);
-}print;
+} print;
 
 int printchar(va_list);
 int printstr(va_list);
