@@ -7,10 +7,11 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int j, i = 0, n = 0;
+	int val, j, i = 0, n = 0;
 
 	print printype[] = {{'c', printchar},
-				{'s', printstr}
+			    {'s', printstr},
+			    {NULL, NULL}
 	};
 
 	va_start(list, format);
@@ -25,7 +26,10 @@ int _printf(const char *format, ...)
 			{
 				if (printype[j].t == format[i])
 				{
-					n += printype[j].f(list);
+					val = printype[j].f(list);
+					if (val == -1)
+						return (-1);
+					n += val;
 					break;
 				}
 
