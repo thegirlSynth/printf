@@ -10,8 +10,7 @@ int _printf(const char *format, ...)
 	int val, j, i = 0, n = 0;
 
 	print printype[] = {{'c', printchar},
-			    {'s', printstr},
-			    {NULL, NULL}
+			    {'s', printstr}
 	};
 
 	va_start(list, format);
