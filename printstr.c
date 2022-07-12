@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 /**
 * printstr - prints a string
 * @list: a va_list macro
@@ -7,7 +8,10 @@
 int printstr(va_list list)
 {
 	int i, n = 0;
-	char* s = va_arg(list, char*);
+	char *s = va_arg(list, char *);
+
+	if (s == NULL)
+		s = "(null)";
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
