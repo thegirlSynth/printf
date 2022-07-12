@@ -28,6 +28,8 @@ int _printf(const char *format, ...)
 				}
 
 			}
+			if (j == 2)
+				n += _putchar(format[i]);
 		}
 		else
 			n += _putchar(format[i]);
