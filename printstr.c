@@ -8,10 +8,11 @@
 int printstr(va_list list)
 {
 	int i, n = 0;
+
 	char *s = va_arg(list, char *);
 
 	if (s == NULL)
-		s = "(null)";
+		return (-1);
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
