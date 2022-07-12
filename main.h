@@ -24,7 +24,7 @@ typedef struct printf
 int printchar(va_list);
 int printstr(va_list);
 int printint(va_list);
-
+int printnum(va_list);
 
 #endif
 

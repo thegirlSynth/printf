@@ -9,8 +9,11 @@ int _printf(const char *format, ...)
 	va_list list;
 	int val, j, i = 0, n = 0;
 
-	print printype[] = {{'c', printchar},
-			    {'s', printstr}
+	print printype[] = {
+		{'c', printchar},
+		{'s', printstr},
+		{'d', printnum},
+		{'i', printnum}
 	};
 
 	va_start(list, format);
@@ -21,7 +24,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			for (j = 0; j < 2; j++)
+			for (j = 0; j < 4; j++)
 			{
 				if (printype[j].t == format[i])
 				{
@@ -33,7 +36,7 @@ int _printf(const char *format, ...)
 				}
 
 			}
-			if (j == 2)
+			if (j == 4)
 				n += _putchar(format[i]);
 		}
 		else
