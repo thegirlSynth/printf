@@ -7,13 +7,14 @@
 */
 int printbinary(va_list list)
 {
-  unsigned int n;
-  int count = 0;
-  
-  n = va_arg(list, unsigned int);
-  binary(n, &count);
-  return (count);
+	unsigned int n;
+	int count = 0;
+
+	n = va_arg(list, unsigned int);
+	binary(n, &count);
+	return (count);
 }
+
 /**
 * binary - returns the binary number
 * @n: an unsigned int

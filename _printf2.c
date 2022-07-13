@@ -8,14 +8,8 @@ int _printf(const char *format, ...)
 {
 	va_list list;
 	int val, j, i = 0, n = 0;
-
-	print printype[] = {
-		{'c', printchar},
-		{'s', printstr},
-		{'d', printnum},
-		{'i', printnum},
-		{'b', printbinary}
-	};
+	print printype[] = {{'c', printchar}, {'s', printstr}, {'d', printnum},
+		{'i', printnum}, {'b', printbinary}};
 
 	va_start(list, format);
 	if (format == NULL || (format[i] == '%' && format[i + 1] == '\0'))
@@ -35,11 +29,11 @@ int _printf(const char *format, ...)
 					n += val;
 					break;
 				}
-
 			}
 			if (j == 5)
 			{
-				n += _putchar('%');
+				if (format[i] != '%')
+					n += _putchar('%');
 				n += _putchar(format[i]);
 			}
 		}
@@ -50,4 +44,3 @@ int _printf(const char *format, ...)
 	va_end(list);
 	return (n);
 }
-
