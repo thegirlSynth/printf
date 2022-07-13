@@ -13,7 +13,8 @@ int _printf(const char *format, ...)
 		{'c', printchar},
 		{'s', printstr},
 		{'d', printnum},
-		{'i', printnum}
+		{'i', printnum},
+		{'b', printbinary}
 	};
 
 	va_start(list, format);
@@ -24,7 +25,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			for (j = 0; j < 4; j++)
+			for (j = 0; j < 5; j++)
 			{
 				if (printype[j].t == format[i])
 				{
@@ -36,8 +37,11 @@ int _printf(const char *format, ...)
 				}
 
 			}
-			if (j == 4)
+			if (j == 5)
+			{
+				n += _putchar('%');
 				n += _putchar(format[i]);
+			}
 		}
 		else
 			n += _putchar(format[i]);
