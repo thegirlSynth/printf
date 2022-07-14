@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 	int val, j, i = 0, n = 0;
 	print printype[] = {{'c', printchar}, {'s', printstr}, {'d', printnum},
 		{'i', printnum}, {'b', printbinary}, {'x', printhexa},
-		{'x', printHEXA}, {'o', printoctal}, {'u', printunsigned}};
+		{'X', printHEXA}, {'o', printoctal}, {'u', printunsigned}};
 
 	va_start(list, format);
 	if (format == NULL || (format[i] == '%' && format[i + 1] == '\0'))
