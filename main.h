@@ -27,6 +27,13 @@ int printint(va_list);
 int printnum(va_list);
 int printbinary(va_list);
 int binary(unsigned int, int*);
+int octal(unsigned int n, int *ptr);
+int printoctal(va_list);
+int printunsigned(va_list);
+int hexa(unsigned int n, int *ptr);
+int printhexa(va_list);
+int HEXA(unsigned int n, int *ptr);
+int printHEXA(va_list);
 
 #endif
 

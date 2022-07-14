@@ -1,10 +1,10 @@
 #include "main.h"
 /**
-* unsigned - handle u specifier in printf
-* @list: a va_list macro
-* Return: number of bytes printed
-*/
-int unsigned(va_list list)
+ * printunsigned - handle u specifier in printf
+ * @list: a va_list macro
+ * Return: number of bytes printed
+ */
+int printunsigned(va_list list)
 {
 	unsigned int n;
 	unsigned int num, div = 1, len = 0;
