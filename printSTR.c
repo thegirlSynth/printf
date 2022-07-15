@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 /**
-* printSRT - handles 
+* printSRT - handles S
 * @list: a va_list macro
 * Return: number of bytes printed. 0 otherwise
 */
@@ -19,7 +19,7 @@ int printSTR(va_list list)
 			n += _putchar(s[i]);
 		else
 		{
-			n += _putchar('\\'):
+			n += _putchar('\\');
 			n += _putchar('x');
 			if (s[i] < 16)
 			{
