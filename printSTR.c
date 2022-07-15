@@ -13,6 +13,9 @@ int printSTR(va_list list)
 	if (s == NULL)
 		s = "(null)";
 
+	else if (*s == '\0')
+		return (-1);
+
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (s[i] >= 32 && s[i] < 127)
