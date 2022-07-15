@@ -34,6 +34,7 @@ int hexa(unsigned int n, int *ptr);
 int printhexa(va_list);
 int HEXA(unsigned int n, int *ptr);
 int printHEXA(va_list);
+int printSTR(va_list);
 
 #endif
 
