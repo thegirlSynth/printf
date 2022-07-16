@@ -8,7 +8,7 @@ int _printf(const char *format, ...)
 {
 	va_list list;
 	int val, j, i = 0, n = 0;
-	print printype[] = {{'c', printchar}, {'s', printSTR}, {'d', printnum},
+	print printype[] = {{'c', printchar}, {'s', printstr}, {'d', printnum},
 		{'i', printnum}, {'b', printbinary}, {'x', printhexa},
 		{'X', printHEXA}, {'o', printoctal}, {'u', printunsigned},
 		{'S', printSTR}};
