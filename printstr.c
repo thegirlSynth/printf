@@ -1,7 +1,11 @@
 #include "main.h"
 #include <stdarg.h>
 #include <stdlib.h>
-
+/**
+ * printstr - prints a string
+ * @list: pointer to string to be printed.
+ * Return: number of bytes printed.
+ */
 
 /* Printing a String */
 
@@ -13,9 +17,7 @@ int printstr(va_list list)
 
 	if (s == NULL)
 		s = "(null)";
-       	else if (*s == '\0')
-		return (-1);
-  
+
 
 	for (i = 0; s[i] != '\0'; i++)
 	{

@@ -1,10 +1,10 @@
 #include "main.h"
 #include <stdlib.h>
 /**
-* printSRT - handles S
-* @list: a va_list macro
-* Return: number of bytes printed. 0 otherwise
-*/
+ * printSTR - handles S
+ * @list: a va_list macro
+ * Return: number of bytes printed. 0 otherwise
+ */
 int printSTR(va_list list)
 {
 	int i, count = 0, n = 0;
@@ -13,8 +13,8 @@ int printSTR(va_list list)
 	if (s == NULL)
 		s = "(null)";
 
-	else if (*s == '\0')
-		return (-1);
+
+
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
@@ -28,7 +28,7 @@ int printSTR(va_list list)
 			{
 				n += _putchar('0');
 			}
-			n += HEXA((unsigned int)s[i], &count);
+			n += HEXA(s[i], &count);
 		}
 	}
 	return (n);
