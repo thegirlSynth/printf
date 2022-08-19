@@ -1,9 +1,22 @@
 #include "main.h"
+
+/**
+ * handle_specifiers -  handles conversion specifiers.
+ *
+ */
+
+int handle_specifiers()
+{
+}
+
+
+
 /**
 * _printf - produces output according to a format
 * @format: is a character string
 * Return: the number of characters printed
 */
+
 int _printf(const char *format, ...)
 {
 	va_list list;
@@ -11,7 +24,7 @@ int _printf(const char *format, ...)
 	print printype[] = {{'c', printchar}, {'s', printstr}, {'d', printnum},
 		{'i', printnum}, {'b', printbinary}, {'x', printhexa},
 		{'X', printHEXA}, {'o', printoctal}, {'u', printunsigned},
-		{'S', printSTR}};
+		{'S', printSTR}, {'p', printSTR}};
 
 	va_start(list, format);
 	if (format == NULL || (format[i] == '%' && format[i + 1] == '\0'))
@@ -21,7 +34,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			for (j = 0; j < 10; j++)
+			for (j = 0; j < 11; j++)
 			{
 				if (printype[j].t == format[i])
 				{
@@ -32,7 +45,7 @@ int _printf(const char *format, ...)
 					break;
 				}
 			}
-			if (j == 10)
+			if (j == 11)
 			{
 				if (format[i] != '%')
 					n += _putchar('%');
