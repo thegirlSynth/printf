@@ -21,6 +21,7 @@ typedef struct printf
 	int (*f)(va_list list);
 } print;
 
+int handle_specifier(const char c, va_list list);
 int printchar(va_list);
 int printstr(va_list);
 int printint(va_list);

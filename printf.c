@@ -1,17 +1,6 @@
 #include "main.h"
 
 /**
- * handle_specifiers -  handles conversion specifiers.
- *
- */
-
-int handle_specifiers()
-{
-}
-
-
-
-/**
 * _printf - produces output according to a format
 * @format: is a character string
 * Return: the number of characters printed
@@ -20,41 +9,31 @@ int handle_specifiers()
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int val, j, i = 0, n = 0;
-	print printype[] = {{'c', printchar}, {'s', printstr}, {'d', printnum},
-		{'i', printnum}, {'b', printbinary}, {'x', printhexa},
-		{'X', printHEXA}, {'o', printoctal}, {'u', printunsigned},
-		{'S', printSTR}, {'p', printSTR}};
+	int i = 0, n = 0, val;
 
 	va_start(list, format);
 	if (format == NULL || (format[i] == '%' && format[i + 1] == '\0'))
 		return (-1);
-	while (format[i] != '\0')
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
 			i++;
-			for (j = 0; j < 11; j++)
-			{
-				if (printype[j].t == format[i])
-				{
-					val = printype[j].f(list);
-					if (val == -1)
-						return (-1);
-					n += val;
-					break;
-				}
-			}
-			if (j == 11)
+			val = handle_specifier(format[i], list);
+			if (val < 0)
+				return (-1);
+			n += val;
+			if (val == 0)
 			{
 				if (format[i] != '%')
+				{
 					n += _putchar('%');
+				}
 				n += _putchar(format[i]);
 			}
 		}
 		else
 			n += _putchar(format[i]);
-		i++;
 	}
 	va_end(list);
 	return (n);
