@@ -1,9 +1,10 @@
 #include "main.h"
+#include <stdbool.h>
 /**
 * handle_specifier - handles conversion specifiers.
 * @c: the character to be checked
 * @list: the variable argument list
-*
+* @val: value of charcters printed.
 * Return: number of characters printed, -1 otherwise
 */
 int handle_specifier(const char c, va_list list, int *val)
@@ -13,7 +14,6 @@ int handle_specifier(const char c, va_list list, int *val)
 		{'i', printnum}, {'b', printbinary}, {'x', printhexa},
 		{'X', printHEXA}, {'o', printoctal}, {'u', printunsigned},
 		{'S', printSTR}, {'p', printpointer}, {'\0', NULL}};
-
 
 	for (j = 0; printype[j].t != '\0'; j++)
 	{
