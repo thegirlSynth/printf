@@ -19,11 +19,13 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			val = handle_specifier(format[i], list);
-			if (val < 0)
-				return (-1);
-			n += val;
-			if (val == 0)
+			if (handle_specifier(format[i], list, &val))
+			{
+				if (val < 0)
+					return (-1);
+				n += val;
+			}
+			else
 			{
 				if (format[i] != '%')
 				{

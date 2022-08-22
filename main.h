@@ -5,6 +5,9 @@
 #include <limits.h>
 #include <stddef.h>
 #include <stdlib.h>
+#include <stdbool.h>
+
+
 int _printf(const char *format, ...);
 int _putchar(char c);
 
@@ -21,7 +24,7 @@ typedef struct printf
 	int (*f)(va_list list);
 } print;
 
-int handle_specifier(const char c, va_list list);
+int handle_specifier(const char c, va_list list, int *val);
 int printchar(va_list);
 int printstr(va_list);
 int printint(va_list);
@@ -36,6 +39,7 @@ int printhexa(va_list);
 int HEXA(unsigned int n, int *ptr);
 int printHEXA(va_list);
 int printSTR(va_list);
+int printptr(va_list list);
 
 #endif
 

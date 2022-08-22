@@ -29,14 +29,14 @@ int HEXA(unsigned int n, int *ptr)
 	int c;
 	char num[] = "0123456789ABCDEF";
 
-	(*ptr)++;
+	*ptr = 0;
 	if (n / 16 > 0)
 	{
 		HEXA(n / 16, ptr);
 	}
 
 	c = (n % 16);
-	_putchar(num[c]);
+	*ptr += _putchar(num[c]);
 
 	return (*ptr);
 }
