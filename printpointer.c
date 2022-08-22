@@ -1,4 +1,11 @@
 #include "main.h"
+
+/**
+ * printpointer - prints addresses
+ * @list: the va_list.
+ * Return: the number of charcters printed.
+ */
+
 int printpointer(va_list list)
 {
 	int count = 0;
