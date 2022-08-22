@@ -16,7 +16,6 @@ int printstr(va_list list)
 	if (s == NULL)
 		s = "(null)";
 
-
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		n += _putchar(s[i]);

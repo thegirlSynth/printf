@@ -19,7 +19,7 @@ int printhexa(va_list list)
  * @len: an unsigned int pointer
  * Return: number of byted printed
  */
-int hexa(unsigned int n, int *len)
+int hexa(unsigned long int n, int *len)
 {
 	unsigned int c;
 
@@ -34,7 +34,7 @@ int hexa(unsigned int n, int *len)
 	}
 	else
 		_putchar(c + '0');
-	return ((*len));
+	return (*len);
 }
 
 
