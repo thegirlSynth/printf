@@ -31,7 +31,7 @@ int printstr(va_list list)
  */
 int printSTR(va_list list)
 {
-	int i, count = 0, n = 0;
+	int i, n = 0;
 	char *s = va_arg(list, char *);
 
 	if (s == NULL)
@@ -49,7 +49,7 @@ int printSTR(va_list list)
 			{
 				n += _putchar('0');
 			}
-			n += HEXA(s[i], &count);
+			n += HEXA(s[i]);
 		}
 	}
 	return (n);

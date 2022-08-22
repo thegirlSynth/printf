@@ -15,7 +15,7 @@ int printpointer(va_list list)
 	p = va_arg(list, unsigned long int);
 	if (p == 0)
 	{
-		write(2, str, 5);
+		write(STDOUT_FILENO, str, 5);
 		count += 5;
 		return (count);
 	}
@@ -23,7 +23,7 @@ int printpointer(va_list list)
 	_putchar('0');
 	_putchar('x');
 	count += 2;
-	hexa(p, &count);
+	count += hexa(p);
 
 	return (count);
 }

@@ -8,11 +8,11 @@
 
 int printHEXA(va_list list)
 {
-	unsigned int n;
+	unsigned long int n;
 	int count = 0;
 
-	n = va_arg(list, unsigned int);
-	HEXA(n, &count);
+	n = va_arg(list, unsigned long int);
+	count += HEXA(n);
 	return (count);
 }
 
@@ -20,23 +20,21 @@ int printHEXA(va_list list)
 /**
  * HEXA - returns the hexadecimal number
  * @n: an unsigned int
- * @ptr: a pointer to an int
  * Return: the binary number
  */
 
-int HEXA(unsigned int n, int *ptr)
+int HEXA(unsigned long int n)
 {
-	int c;
+	int count;
 	char num[] = "0123456789ABCDEF";
 
-	*ptr = 0;
+	count = 0;
 	if (n / 16 > 0)
 	{
-		HEXA(n / 16, ptr);
+		count += HEXA(n / 16);
 	}
 
-	c = (n % 16);
-	*ptr += _putchar(num[c]);
+	count += _putchar(num[n % 16]);
 
-	return (*ptr);
+	return (count);
 }

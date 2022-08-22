@@ -6,35 +6,34 @@
  */
 int printhexa(va_list list)
 {
-	int cout = 0;
-	unsigned int n = va_arg(list, unsigned int);
+	int count = 0;
+	unsigned long int n = va_arg(list, unsigned long int);
 
-	hexa(n, &cout);
-	return (cout);
+	count += hexa(n);
+	return (count);
 }
 
 /**
  * hexa - handle x for hexadecimal numbers
  * @n: the number to be converted
- * @len: an unsigned int pointer
  * Return: number of byted printed
  */
-int hexa(unsigned long int n, int *len)
+int hexa(unsigned long int n)
 {
-	unsigned int c;
+	unsigned int count = 0, c;
 
-	(*len)++;
+
 	if (n / 16 > 0)
-		hexa(n / 16, len);
+		count += hexa(n / 16);
 	c = n % 16;
 	if (c > 9 && c < 16)
 	{
 		c -= 10;
-		_putchar(c + 'a');
+		count += _putchar(c + 'a');
 	}
 	else
-		_putchar(c + '0');
-	return (*len);
+		count += _putchar(c + '0');
+	return (count);
 }
 
 
